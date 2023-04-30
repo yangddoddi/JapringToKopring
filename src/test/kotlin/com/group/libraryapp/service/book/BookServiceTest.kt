@@ -1,8 +1,8 @@
 package com.group.libraryapp.service.book
 
 import com.group.libraryapp.domain.book.Book
-import com.group.libraryapp.domain.book.JavaBook
 import com.group.libraryapp.domain.book.BookRepository
+import com.group.libraryapp.domain.user.JavaUser
 import com.group.libraryapp.domain.user.User
 import com.group.libraryapp.domain.user.UserRepository
 import com.group.libraryapp.domain.user.loanhistory.UserLoanHistoryRepository
@@ -31,8 +31,8 @@ open class BookServiceTest @Autowired constructor(
 
     @BeforeEach
     fun init() {
-        user1 = User("양은찬", 20)
-        user2 = User("김만식", 30)
+        user1 = User(name = "양은찬", age = 20)
+        user2 = User(name = "김만식", age = 30)
         userRepository.save(user1)
         userRepository.save(user2)
     }

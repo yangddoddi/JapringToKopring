@@ -1,10 +1,12 @@
 package com.group.libraryapp.service.user;
 
+import com.group.libraryapp.domain.user.JavaUser;
 import com.group.libraryapp.domain.user.User;
 import com.group.libraryapp.domain.user.UserRepository;
 import com.group.libraryapp.dto.user.request.UserCreateRequest;
 import com.group.libraryapp.dto.user.request.UserUpdateRequest;
 import com.group.libraryapp.dto.user.response.UserResponse;
+import java.util.ArrayList;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,7 +24,7 @@ public class UserService {
 
   @Transactional
   public void saveUser(UserCreateRequest request) {
-    User newUser = new User(request.getName(), request.getAge());
+    User newUser = new User(null, request.getName(), request.getAge(), new ArrayList<>());
     userRepository.save(newUser);
   }
 

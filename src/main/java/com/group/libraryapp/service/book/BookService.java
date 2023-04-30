@@ -1,8 +1,8 @@
 package com.group.libraryapp.service.book;
 
 import com.group.libraryapp.domain.book.Book;
-import com.group.libraryapp.domain.book.JavaBook;
 import com.group.libraryapp.domain.book.BookRepository;
+import com.group.libraryapp.domain.user.JavaUser;
 import com.group.libraryapp.domain.user.User;
 import com.group.libraryapp.domain.user.UserRepository;
 import com.group.libraryapp.domain.user.loanhistory.UserLoanHistoryRepository;
@@ -51,5 +51,4 @@ public class BookService {
     User user = userRepository.findByName(request.getUserName()).orElseThrow(IllegalArgumentException::new);
     user.returnBook(request.getBookName());
   }
-
 }
