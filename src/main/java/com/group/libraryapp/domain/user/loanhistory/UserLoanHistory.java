@@ -37,6 +37,10 @@ public class UserLoanHistory {
     return this.bookName;
   }
 
+  public Boolean isReturn() {
+    return this.isReturn;
+  }
+
   public void doReturn() {
     this.isReturn = true;
   }
